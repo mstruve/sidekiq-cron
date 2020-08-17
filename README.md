@@ -296,7 +296,7 @@ Sidekiq-Cron adds itself into this start procedure and starts another thread wit
 
 Sidekiq-Cron is checking jobs to be enqueued every 30s by default, you can change it by setting:
 ```
-Sidekiq.options[:poll_interval] = 10
+Sidekiq.options[:average_scheduled_poll_interval] = 10
 ```
 
 Sidekiq-Cron is safe to use with multiple sidekiq processes or nodes. It uses a Redis sorted set to determine that only the first process who asks can enqueue scheduled jobs into the queue.
